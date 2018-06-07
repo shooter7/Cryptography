@@ -1,20 +1,21 @@
 def planToCypher(text):
     cypher = ""
     for i in text:
-        if i==" ":continue
-        c = ord(i) + 3
-        if c>ord("z") :
-            c-=26
-        cypher += chr(c)
+        if i.isalpha():
+            c = ord(i) + 3
+            if c>ord("z") :
+                c-=26
+            cypher += chr(c)
     print "cypher text is " +cypher
 
 def cypherToPlan(text):
     plan = ""
     for i in text:
-        c = (ord(i) - 3)
-        if c<ord("a") :
-            c+=26
-        plan += chr(c)
+        if i.isalpha():
+            c = (ord(i) - 3)
+            if c<ord("a") :
+                c+=26
+            plan += chr(c)
     print "plan text is " + plan
 
 text = raw_input("enter text:")
