@@ -1,5 +1,5 @@
 #encripe function
-def planToCypher(text,rule):
+def plainToCypher(text,rule):
     cypher = ""
     for i in range(0,len(text)):
         if text[i].isalpha():
@@ -11,31 +11,29 @@ def planToCypher(text,rule):
 
 
 #decripe function
-def cypherToPlan(text,rule):
-    plan = ""
+def cypherToplain(text,rule):
+    plain = ""
     for i in range(0, len(text)):
         if text[i].isalpha():
             c = ord(text[i]) -(3+(i%rule)*2)
             if c<ord("a") :
                 c+=26
-            plan += chr(c)
-    print "plan text is " + plan
+            plain += chr(c)
+    print "plain text is " + plain
 
 
-text = raw_input("enter text:")
-
-
-def runprogram(text):
+def runprogram():
     print ("choose number:")
-    print ("1-plane text")
+    print ("1-plaine text")
     print ("2-cypher text")
     n = input(">")
+    text = raw_input("enter text:")
     if n == 1:
-        planToCypher(text,3)
+        plainToCypher(text,3)
     elif n == 2:
-        cypherToPlan(text,3)
+        cypherToplain(text,3)
     else:
         runprogram()
 
 
-runprogram(text)
+runprogram()
